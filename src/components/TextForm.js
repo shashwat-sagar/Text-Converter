@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import { Button, Divider, Icon } from "rsuite";
+import { Button, Divider, Icon, Toggle } from "rsuite";
 import PropTypes from "prop-types";
 
 const TextForm = (props) => {
   const [text, setText] = useState("");
+  const [switchChange, setSwitchChange] = useState(false)
   const [row, setRow] = useState("4");
   const [hide, setHide] = useState("");
   const [myStyle, setMyStyle] = useState({
@@ -11,7 +12,7 @@ const TextForm = (props) => {
     backgroundColor: '#ffffff',
     borderRadius: '8px'
     })
-    const theme = () => {
+    const theme =  () => {
       if(myStyle.color === 'grey') {
         setMyStyle({
           color: '#ffffff',
@@ -19,15 +20,19 @@ const TextForm = (props) => {
           // border: '1px solid white',
           borderRadius: '8px'
         })
+        setSwitchChange(true)
       }
+      
       else {
         setMyStyle({
           color: 'grey',
           backgroundColor: '#ffffff',
           borderRadius: '8px',
-          // border: '1px solid black',
+        
         })
+        setSwitchChange(false)
       }
+      
     }
 
   const upperCaseClick = () => {
@@ -67,8 +72,9 @@ const TextForm = (props) => {
     }
   }
   return (
-    <>
-    <Button color={myStyle} onClick={theme}>Dark Mode</Button>
+    <div style={myStyle}>
+     <Toggle className="my-2 mx-2" size="md" checkedChildren="Night" unCheckedChildren="Day" onChange={theme} checked={switchChange} />
+   
     <div className="container my-3" style={myStyle}>
       <h1 className="d-flex justify-content-center my-1">{props.heading}</h1>
       <div className="d-flex justify-content-md-end">
@@ -109,7 +115,7 @@ const TextForm = (props) => {
       <h4>Preview</h4>
       <p>{text}</p>
     </div>
-    </>
+    </div>
   );
 };
 

@@ -5,9 +5,9 @@ const Home = (props) => {
  
   
   return (
-   <div>
+   <>
      <TextForm heading={'TEXT Converter'} />
-   </div>
+   </>
   );
 };
 
