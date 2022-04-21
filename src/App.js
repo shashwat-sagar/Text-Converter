@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import 'rsuite/dist/styles/rsuite-default.css';
 import './styles/main.scss'
 import { Switch, Route } from 'react-router';
-import { Button, Icon } from "rsuite";
+// import { Button, Icon } from "rsuite";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import Signup from "./pages/Signup";
