@@ -113,7 +113,8 @@ const TextForm = (props) => {
       <p>Takes {0.008 * text.split(" ").length} minutes to read the above text.</p>
       <hr />
       <h4>Preview</h4>
-      <p>{text}</p>
+      <details> <p>{text}</p></details>
+     
     </div>
     </div>
   );
