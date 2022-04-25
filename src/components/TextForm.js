@@ -1,39 +1,39 @@
 import React, { useState } from "react";
-import { Button, Divider, Icon, Toggle } from "rsuite";
+import { Button, Divider, Icon } from "rsuite";
 import PropTypes from "prop-types";
 
 const TextForm = (props) => {
   const [text, setText] = useState("");
-  const [switchChange, setSwitchChange] = useState(false)
+  // const [switchChange, setSwitchChange] = useState(false)
   const [row, setRow] = useState("4");
   const [hide, setHide] = useState("");
-  const [myStyle, setMyStyle] = useState({
-    color: 'grey',
-    backgroundColor: '#ffffff',
-    borderRadius: '8px'
-    })
-    const theme =  () => {
-      if(myStyle.color === 'grey') {
-        setMyStyle({
-          color: '#ffffff',
-          backgroundColor: '#212121',
-          // border: '1px solid white',
-          borderRadius: '8px'
-        })
-        setSwitchChange(true)
-      }
+  // const [myStyle, setMyStyle] = useState({
+    // color: 'grey',
+    // backgroundColor: '#ffffff',
+    // borderRadius: '8px'
+    // })
+    // const theme =  () => {
+    //   if(myStyle.color === 'grey') {
+    //     setMyStyle({
+    //       color: '#ffffff',
+    //       backgroundColor: '#212121',
+    //       // border: '1px solid white',
+    //       borderRadius: '8px'
+    //     })
+    //     setSwitchChange(true)
+    //   }
       
-      else {
-        setMyStyle({
-          color: 'grey',
-          backgroundColor: '#ffffff',
-          borderRadius: '8px',
+    //   else {
+    //     setMyStyle({
+    //       color: 'grey',
+    //       backgroundColor: '#ffffff',
+    //       borderRadius: '8px',
         
-        })
-        setSwitchChange(false)
-      }
+    //     })
+    //     setSwitchChange(false)
+    //   }
       
-    }
+    // }
 
   const upperCaseClick = () => {
     // console.log("Convert the Text");
