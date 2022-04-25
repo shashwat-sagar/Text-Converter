@@ -12,18 +12,23 @@ import About from "./pages/About";
 
 function App() {
   const [mode, setMode] = useState('navbarLight');
+  const [theme, setTheme] = useState('themeL')
+
   const toggleMode = () => {
     if(mode === 'navbarLight') {
       setMode('navbarDark');
+      setTheme('themeD')
+     
     }
     else {
       setMode('navbarLight');
+      setTheme('themeL')
     }
   }
 
   return (
   <>
-    <Navbar mode={mode} toggleMode={toggleMode} />
+    <Navbar mode={mode} toggleMode={toggleMode}  />
   <Switch>
 
     <Route path="/signup">
@@ -40,7 +45,7 @@ function App() {
     </Route>
     <Route path="/">
      
-      <Home heading={<h1>shivansh</h1>} />
+      <Home heading={<h1>shivansh</h1>} modeagain={theme} />
     </Route>
   </Switch>
   </>

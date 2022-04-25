@@ -72,16 +72,16 @@ const TextForm = (props) => {
     }
   }
   return (
-    <div style={myStyle}>
-     <Toggle className="my-2 mx-2" size="md" checkedChildren="Night" unCheckedChildren="Day" onChange={theme} checked={switchChange} />
+    <div className={`${props.mode}`}>
+     
    
-    <div className="container my-3" style={myStyle}>
-      <h1 className="d-flex justify-content-center my-1">{props.heading}</h1>
+    <div className={`${props.mode} container`}>
+      <h1 className="d-flex justify-content-center">{props.heading}</h1>
       <div className="d-flex justify-content-md-end">
 
-      <button className="btn mx-2" onClick={hidden}><Icon style={myStyle} icon="minus" /></button>
-      <button className="btn mx-2" onClick={minimize}><Icon style={myStyle} icon="square-o" /></button>
-      <button className="btn mx-2" onClick={clearText}><Icon style={myStyle} icon="close" /></button>
+      <button className="btn mx-2" onClick={hidden}><Icon className={`${props.mode}`}  icon="minus" /></button>
+      <button className="btn mx-2" onClick={minimize}><Icon className={`${props.mode}`} icon="square-o" /></button>
+      <button className="btn mx-2" onClick={clearText}><Icon className={`${props.mode}`} icon="close" /></button>
       </div>
       <div className="mb-3">
         <textarea
@@ -105,7 +105,7 @@ const TextForm = (props) => {
        
       </div>
     </div>
-    <div className="container" style={myStyle}>
+    <div className={`${props.mode} container`}>
       <Divider />
       <h4>Your text summary</h4>
       <p>Total number of Words: {text.split(" ").length } </p>

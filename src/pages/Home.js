@@ -6,7 +6,7 @@ const Home = (props) => {
   
   return (
    <>
-     <TextForm heading={'TEXT Converter'} />
+     <TextForm heading={'TEXT Converter'} mode={props.modeagain} />
    </>
   );
 };
