@@ -1,5 +1,6 @@
-#Simple Text Converter Web App
-##With Theme Selector (Dark Mode)
+# Simple Text Converter Web App
+
+## With Theme Selector (Dark Mode)
 
 ### Created With React
 
