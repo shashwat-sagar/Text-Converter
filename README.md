@@ -1,3 +1,18 @@
+#Simple Text Converter Web App
+##With Theme Selector (Dark Mode)
+
+### Created With React
+
+
+
+
+
+
+
+## Screenshots
+![Screenshot (61)](https://user-images.githubusercontent.com/59369746/165152455-469a67e1-d332-44f6-8281-44b5d3b53d68.png)
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
