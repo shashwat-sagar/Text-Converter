@@ -108,9 +108,10 @@ const TextForm = (props) => {
     <div className={`${props.mode} container`}>
       <Divider />
       <h4>Your text summary</h4>
-      <p>Total number of Words: {text.split(" ").length } </p>
-      <p>Total number of Characters: {text.length}</p>
-      <p>Takes {0.008 * text.split(" ").length} minutes to read the above text.</p>
+      <p>Total number of Words: <i>{text.split(" ").length }</i> </p>
+      <p>Total number of Characters: <i>{text.length}</i></p>
+      <p>Takes <i>{0.5 * text.split(" ").length}</i> seconds or <i>{0.008 * text.split(" ").length}</i> minutes to read the above text.</p>
+      {/* <p>Takes {0.008 * text.split(" ").length} minutes to read the above text.</p> */}
       <hr />
       <h4>Preview</h4>
       <details> <p>{text}</p></details>

@@ -37,11 +37,11 @@ function App() {
     </Route>
     <Route path="/signin">
     
-      <Signin />
+      <Signin mode={theme} />
     </Route> 
     <Route path="/about">
    
-      <About />
+      <About mode={theme} />
     </Route>
     <Route path="/">
      
