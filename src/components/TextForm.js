@@ -71,6 +71,11 @@ const TextForm = (props) => {
       setHide("")
     }
   }
+  const handleCopy = () => {
+    var text = document.getElementById("exampleFormControlTextarea1");
+    text.select();
+    navigator.clipboard.writeText(text.value)
+  }
   return (
     <div className={`${props.mode}`}>
      
@@ -78,12 +83,13 @@ const TextForm = (props) => {
     <div className={`${props.mode} container`}>
       <h1 className="d-flex justify-content-center">{props.heading}</h1>
       <div className="d-flex justify-content-md-end">
-
+     
       <button className="btn mx-2" onClick={hidden}><Icon className={`${props.mode}`}  icon="minus" /></button>
       <button className="btn mx-2" onClick={minimize}><Icon className={`${props.mode}`} icon="square-o" /></button>
       <button className="btn mx-2" onClick={clearText}><Icon className={`${props.mode}`} icon="close" /></button>
       </div>
-      <div className="mb-3">
+      <div className="mb-3 textWrap">
+        <div className="copyBtn"> <button className="btn" onClick={handleCopy}> <Icon className="copyIcon" icon="copy" /></button></div>
         <textarea
           className="form-control"
           placeholder="Enter Text Here......"
@@ -93,6 +99,7 @@ const TextForm = (props) => {
           hidden={hide}
           onChange={handleOnChange}
         ></textarea>
+      
         <div className="d-flex justify-content-center my-3">
         <button className="btn btn-primary mx-2 btn-danger" onClick={upperCaseClick}>
           Convert to UpperCase <Icon icon="arrow-up2" />
