@@ -42,12 +42,78 @@ textarea.rs-input {
     max-width: 300px;
   }
 }
+.textWrap {
+  position: relative;
+}
 .copyBtn {
+  margin-top: 7px;
   position: absolute;
-  right: 1%
-
+  right: 1%;
+  background-color: transparent;
+  border-radius: 8px;
 }
 
-.textWrap{
-  position: relative;
+.form-light {
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+}
+.form-light:focus {
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  box-shadow: 0 0 4px #242424, 0 0 8px #242424, 0 0 12px #242424;
+}
+.form-dark {
+  background-color: #000000;
+  color: white;
+}
+.form-dark:focus {
+  background-color: #1c1c1c;
+  color: white;
+  box-shadow: 0 0 4px #ffffff, 0 0 8px #ffffff, 0 0 12px #ffffff;
+}
+.options-dark{
+  margin: 0 4px 0 4px;
+  width: 35px;
+  height: 35px;
+  background-color: #353535;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  
+}
+.options-dark:hover{
+  box-shadow: 0 0 4px #ffffff, 0 0 8px rgb(107, 107, 107);
+}
+.options-light:hover{
+  box-shadow: 0 0 4px #313131, 0 0 8px rgb(62, 62, 62);
+}
+.options-light{
+  margin: 0 4px 0 4px;
+  width: 35px;
+  height: 35px;
+ background-color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+}
+
+.list-dark{
+  list-style: none;
+  
+  
+  cursor: pointer;
+  border-radius: 4px;
+  padding: 4px;
+  border-radius: 4px;
+  margin: -10px 0 -15px 0;
+}
+.list-light{
+  list-style: none;
+
+  cursor: pointer;
+  border-radius: 4px;
+  padding: 4px;
+  margin: -10px 0 -15px 0;
 }

@@ -10,6 +10,7 @@ import Signup from "./pages/Signup";
 import Signin from "./pages/Signin";
 import About from "./pages/About";
 
+
 function App() {
   const [mode, setMode] = useState('navbarLight');
   const [theme, setTheme] = useState('themeL')
@@ -29,6 +30,7 @@ function App() {
   return (
   <>
     <Navbar mode={mode} toggleMode={toggleMode}  />
+    
   <Switch>
 
     <Route path="/signup">

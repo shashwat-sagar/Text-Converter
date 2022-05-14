@@ -1,39 +1,26 @@
 import React, { useState } from "react";
-import { Button, Divider, Icon } from "rsuite";
+import { Alert, Button, Divider, Icon, Tooltip, Whisper } from "rsuite";
 import PropTypes from "prop-types";
+
 
 const TextForm = (props) => {
   const [text, setText] = useState("");
   // const [switchChange, setSwitchChange] = useState(false)
   const [row, setRow] = useState("4");
   const [hide, setHide] = useState("");
-  // const [myStyle, setMyStyle] = useState({
-    // color: 'grey',
-    // backgroundColor: '#ffffff',
-    // borderRadius: '8px'
-    // })
-    // const theme =  () => {
-    //   if(myStyle.color === 'grey') {
-    //     setMyStyle({
-    //       color: '#ffffff',
-    //       backgroundColor: '#212121',
-    //       // border: '1px solid white',
-    //       borderRadius: '8px'
-    //     })
-    //     setSwitchChange(true)
-    //   }
-      
-    //   else {
-    //     setMyStyle({
-    //       color: 'grey',
-    //       backgroundColor: '#ffffff',
-    //       borderRadius: '8px',
-        
-    //     })
-    //     setSwitchChange(false)
-    //   }
-      
-    // }
+
+// const square = () => {
+//   let i;
+//   const number = [1,2,3,4,5];
+//   for(i=0;i<5;i++){
+//     number[i] = number[i]*number[i];
+//     return i;
+//   }
+// square();
+// }
+
+
+  
 
   const upperCaseClick = () => {
     // console.log("Convert the Text");
@@ -76,22 +63,57 @@ const TextForm = (props) => {
     text.select();
     navigator.clipboard.writeText(text.value)
   }
+  const removeExtraSpaces = () => {
+    let newText = text.split(/[ ]+/);
+    setText(newText.join(" "))
+  }
+
+  const download = () => {
+   Alert.warning("Download button is under construction")
+    
+  }
+  const paste = async () => {
+   const paste = await navigator.clipboard.readText(text.value);
+   setText(text+paste);
+  
+  }
+
+ 
+  
+  const option1 = (
+    <Tooltip>
+      <i>Remove Extra Spaces</i>
+    </Tooltip>
+  )
+  const option2 = (
+    <Tooltip>
+      <i>Paste</i>
+    </Tooltip>
+  )
+  const option3 = (
+    <Tooltip>
+      <i>Delete all</i>
+    </Tooltip>
+  )
+  const option4 = (
+    <Tooltip>
+      <i>Download</i>
+    </Tooltip>
+  )
+  
   return (
     <div className={`${props.mode}`}>
-     
-   
     <div className={`${props.mode} container`}>
       <h1 className="d-flex justify-content-center">{props.heading}</h1>
       <div className="d-flex justify-content-md-end">
-     
       <button className="btn mx-2" onClick={hidden}><Icon className={`${props.mode}`}  icon="minus" /></button>
       <button className="btn mx-2" onClick={minimize}><Icon className={`${props.mode}`} icon="square-o" /></button>
       <button className="btn mx-2" onClick={clearText}><Icon className={`${props.mode}`} icon="close" /></button>
       </div>
       <div className="mb-3 textWrap">
-        <div className="copyBtn"> <button className="btn" onClick={handleCopy}> <Icon className="copyIcon" icon="copy" /></button></div>
+        <div className="copyBtn"> <button className="btn" onClick={handleCopy}> <Icon className={`${props.mode}`} icon="copy" /></button></div>
         <textarea
-          className="form-control"
+          className={`form-control form-${props.mode==='themeL'?'light': 'dark'}`}
           placeholder="Enter Text Here......"
           id="exampleFormControlTextarea1"
           rows={row}
@@ -99,7 +121,6 @@ const TextForm = (props) => {
           hidden={hide}
           onChange={handleOnChange}
         ></textarea>
-      
         <div className="d-flex justify-content-center my-3">
         <button className="btn btn-primary mx-2 btn-danger" onClick={upperCaseClick}>
           Convert to UpperCase <Icon icon="arrow-up2" />
@@ -107,9 +128,23 @@ const TextForm = (props) => {
         <Button color="green" onClick={lowerCaseClick}>
         Convert to LowerCase <Icon icon="arrow-down2" />
         </Button>
-       
         </div>
-       
+        <div className="optionsTab d-flex justify-content-center">
+          <ul className={`d-flex f-d-r list-${props.mode==='themeL'?'dark' : 'light'} `}>
+          <Whisper placement="bottom" controlId="control-id-hover" trigger="hover" speaker={option1}>
+             <li className={`options-${props.mode==='themeL'?'light' : 'dark'}`} onClick={removeExtraSpaces}><Icon icon="wrench" /></li>
+          </Whisper>
+          <Whisper placement="bottom" controlId="control-id-hover" trigger="hover" speaker={option2}>
+             <li className={`options-${props.mode==='themeL'?'light' : 'dark'}`} onClick={paste}><Icon icon="paste" /></li>
+          </Whisper>
+          <Whisper placement="bottom" controlId="control-id-hover" trigger="hover" speaker={option3}>
+             <li className={`options-${props.mode==='themeL'?'light' : 'dark'}`} onClick={clearText}><Icon icon="eraser" /></li>
+          </Whisper>
+          <Whisper placement="bottom" controlId="control-id-hover" trigger="hover" speaker={option4}>
+             <li className={`options-${props.mode==='themeL'?'light' : 'dark'}`} onClick={download}><Icon icon="download" /></li>
+          </Whisper>
+          </ul>
+        </div>
       </div>
     </div>
     <div className={`${props.mode} container`}>
@@ -121,7 +156,7 @@ const TextForm = (props) => {
       {/* <p>Takes {0.008 * text.split(" ").length} minutes to read the above text.</p> */}
       <hr />
       <h4>Preview</h4>
-      <details> <p>{text}</p></details>
+      <details> <p>{text.length>0?text:"Please enter something in the Textbox above to preview it here"}</p></details>
      
     </div>
     </div>
