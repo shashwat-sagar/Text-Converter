@@ -102,7 +102,6 @@ textarea.rs-input {
 .list-dark{
   list-style: none;
   
-  
   cursor: pointer;
   border-radius: 4px;
   padding: 4px;
@@ -116,4 +115,25 @@ textarea.rs-input {
   border-radius: 4px;
   padding: 4px;
   margin: -10px 0 -15px 0;
+}
+// .alert{
+// display: flex;
+// align-items: center;
+// justify-content: center;
+//  
+//   transition-delay: 400ms;
+// }
+.message{
+  max-height:6vh ;
+  color: #000000 !important;
+text-align: center;
+padding: 20px;
+border: 2px solid black;
+background: transparent;
+font-size: 16px;
+}
+.themeBtn{
+  position: absolute;
+  margin: 10px;
+  background-color: transparent;
 }

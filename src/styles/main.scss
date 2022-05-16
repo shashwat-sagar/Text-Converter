@@ -19,7 +19,9 @@ body,
 #root > div {
   height: 100%;
 }
-
+.red{
+  background-color: red;
+}
 .custom-style {
   width: 120px;
   padding-left: 45px;
@@ -68,7 +70,7 @@ body,
   height: 12vh;
   max-height: 8vh;
   font-weight: 500;
-  background-color: #d0d0d0;
+  background-color: #97abbc;
   // background: linear-gradient(to right, #c0c0c0, #2a2a2a);
   display: flex;
   flex-direction: row;
@@ -87,43 +89,41 @@ body,
 }
 .nav-list {
   display: flex;
+  padding-top: 10px;
   flex-direction: row;
   list-style: none;
   text-decoration: none;
-  height: vh;
+ 
   align-items: center;
   width: 80%;
- 
 }
- .nav-items {
-  margin: 10px;
+.nav-items {
+  margin: 1px;
   display: flex;
   align-items: center;
   justify-content: center;
   text-decoration: none;
   color: white;
   width: 100%;
- 
+
   list-style: none;
 }
 .nav-items:hover {
-
   color: #ffffff;
   // font-weight: 600;
   font-weight: 600;
   text-decoration: none;
   transition: 200ms;
-  
 }
-.switch{
+.switch {
   min-width: 60px;
 }
-.themeL{
-  background-color: #ffffff;
+.themeL {
+  background-color: #def1ff;
   color: grey;
-  border-radius: 8px
+  border-radius: 8px;
 }
-.themeD{
+.themeD {
   background-color: #15232e;
   color: #ffffff;
   border-radius: 8px;
