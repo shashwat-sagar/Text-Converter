@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { Button, Drawer,Icon,Modal } from 'rsuite';
+import React from 'react'
+import { Button, Modal } from 'rsuite';
 import { useModalState } from '../misc/custom-hooks';
 
 const Themes = (props) => {
