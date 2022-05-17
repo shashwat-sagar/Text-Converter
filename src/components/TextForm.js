@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Alert, Button, Divider, Icon, Tooltip, Whisper } from "rsuite";
 import PropTypes from "prop-types";
-import Themes from './Themes'
+
 
 const TextForm = (props) => {
   const [text, setText] = useState("");
@@ -93,11 +93,7 @@ const TextForm = (props) => {
       <i>Download</i>
     </Tooltip>
   );
-  const option5 = (
-    <Tooltip>
-      <i>Themes</i>
-    </Tooltip>
-  );
+
 
   return (
     <div className={`${props.mode} ` }>
