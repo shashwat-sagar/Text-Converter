@@ -23,7 +23,7 @@ const Navbar = (props) => {
        
        
     </ul>
-    <Toggle className="my-2 mx-2 switch" size="md" checkedChildren='Dark' unCheckedChildren="Light " onChange={props.toggleMode} />
+    <Toggle className="my-2 mx-2 switch" size="md" checkedChildren={props.togglenamecheck} unCheckedChildren={props.togglenameuncheck} onChange={props.toggleMode} />
 
   </div>
   )

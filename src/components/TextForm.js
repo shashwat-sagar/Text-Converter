@@ -96,7 +96,7 @@ const TextForm = (props) => {
 
 
   return (
-    <div className={`${props.mode} ` }>
+    <div className={`${props.mode}` }>
       <div className={`${props.mode} container`}>
         <h1 className="d-flex justify-content-center">{props.heading}</h1>
         <div className="d-flex justify-content-md-end">
@@ -120,7 +120,7 @@ const TextForm = (props) => {
           </div>
           <textarea
             className={`form-control form-${
-              props.mode === "themeL" ? "light" : "dark"
+              props.mode === "themeL" ? "light" : "dark" && props.mode !== 'themeL' & props.mode !== 'themeD' ? 'light' : 'dark'
             }`}
             placeholder="Enter Text Here......"
             id="exampleFormControlTextarea1"

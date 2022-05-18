@@ -14,16 +14,25 @@ import Themes from "./components/Themes";
 
 function App() {
   const [mode, setMode] = useState('navbarLight');
-  const [theme, setTheme] = useState('themeL')
+  const [theme, setTheme] = useState('themeL');
+  const [toggleBtnName, setToggleBtnName] = useState('Dark')
+  const [toggleBtnNameUn, setToggleBtnNameUn] = useState('Light')
 
   const toggleMode = () => {
     if(mode === 'navbarLight') {
       setMode('navbarDark');
       setTheme('themeD')
+      setToggleBtnName('Dark')
+      setToggleBtnNameUn('Light')
       Alert.success("Dark Mode Enabled", 1000)
      
+    } 
+    else if(theme !== 'themeL' && theme !== 'themeD'){
+      setMode('navbarLight')
+      setTheme('themeL')
+      setToggleBtnName('Dark')
     }
-    else {
+    else{
       setMode('navbarLight');
       setTheme('themeL')
       Alert.info("Dark Mode Disabled", 1000)
@@ -31,9 +40,11 @@ function App() {
   }
   const apple = () => {
     setTheme('apple')
+    setMode('navbarDark');
   }
   const rose= () => {
     setTheme('rose')
+    setMode('navbarLight')
   }
   const orange = () => {
     setTheme('orange')
@@ -43,6 +54,7 @@ function App() {
   }
   const yellow = () => {
     setTheme('yellow')
+    setMode('navbarDark');
   }
   const violet = () => {
     setTheme('violet')
@@ -60,7 +72,7 @@ function App() {
   return (
   <>
   <Themes apple={apple} red={red} rose={rose} orange={orange} green={green} cyan={cyan} violet={violet} blue={blue} yellow={yellow} />
-    <Navbar mode={mode} toggleMode={toggleMode}  />
+    <Navbar mode={mode} toggleMode={toggleMode} togglenamecheck={toggleBtnName} togglenameuncheck={toggleBtnNameUn}  />
     
     
   <Switch>
