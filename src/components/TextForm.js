@@ -230,14 +230,14 @@ const TextForm = (props) => {
         <Divider />
         <h4>Your text summary</h4>
         <p>
-          Total number of Words: <i>{text.split(" ").length}</i>{" "}
+          Total number of Words: <i>{text.split(/\s+/).length}</i>
         </p>
         <p>
           Total number of Characters: <i>{text.length}</i>
         </p>
         <p>
-          Takes <i>{0.5 * text.split(" ").length}</i> seconds or{" "}
-          <i>{0.008 * text.split(" ").length}</i> minutes to read the above
+          Takes <i>{0.5 * text.split(/\s+/).length}</i> seconds or{" "}
+          <i>{0.008 * text.split(/\s+/s).length}</i> minutes to read the above
           text.
         </p>
         {/* <p>Takes {0.008 * text.split(" ").length} minutes to read the above text.</p> */}
